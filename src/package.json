@@ -1,0 +1,26 @@
+{
+  "name": "editor",
+  "version": "1.0.0",
+  "description": "a game editor",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/3dseals/CrossGateEditor.git"
+  },
+  "keywords": [
+    "cross",
+    "gate"
+  ],
+  "author": "lional",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/3dseals/CrossGateEditor/issues"
+  },
+  "homepage": "https://github.com/3dseals/CrossGateEditor#readme",
+  "devDependencies": {
+    "electron": "^2.0.4"
+  }
+}
