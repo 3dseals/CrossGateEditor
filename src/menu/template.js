@@ -1,5 +1,5 @@
 var path = require('path');
-var {app, shell} = require('electron')  // this should work if you're in the electron environment
+var {app, dialog, shell} = require('electron')  // this should work if you're in the electron environment
 
 module.exports = function() {
 
@@ -10,7 +10,19 @@ module.exports = function() {
                 {
                     label: 'Open',
                     accelerator: 'CmdOrCtrl+O',
-                    click: function() { app.quit(); }
+                    click: function() {
+                        dialog.showOpenDialog({
+                            defaultPath :'.',
+                            properties: [
+                                'openFile',
+                            ],
+                            filters: [
+                                { extensions: ['bin'] },
+                            ]
+                        },function(res){
+                            console.log(res?res[0]:null) //我这个是打开单个文件的
+                        })
+                    }
                 },
                 {
                     label: 'Exit',
