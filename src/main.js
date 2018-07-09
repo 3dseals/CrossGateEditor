@@ -1,5 +1,6 @@
 // Modules to control application life and create native browser window
-const {app, BrowserWindow, Menu, dialog} = require('electron');
+const {app, BrowserWindow, Menu, dialog, ipcMain} = require('electron');
+const {openFileCallback} = require('./src/openFIle');
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -12,7 +13,7 @@ function createWindow () {
 
     var template = require('./menu/template');
     // Get template for default menu
-    var menu = template();
+    var menu = template(openFileCallback);
 
     menu.mainWindow = mainWindow;
 
@@ -31,7 +32,7 @@ function createWindow () {
     Menu.setApplicationMenu(Menu.buildFromTemplate(menu));
 
     // and load the index.html of the app.
-    mainWindow.loadFile('view/index.html')
+    mainWindow.loadFile('view/index.html');
 
     // Open the DevTools.
     // mainWindow.webContents.openDevTools()
