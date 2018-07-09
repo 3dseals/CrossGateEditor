@@ -2,9 +2,10 @@
   "name": "editor",
   "version": "1.0.0",
   "description": "a game editor",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
-    "test": "test"
+    "start": "electron .",
+    "test": "electron ."
   },
   "repository": {
     "type": "git",
