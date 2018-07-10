@@ -1,5 +1,8 @@
 class GraphicInfo {
     constructor(data){
+        // 1e0b 0100 9e00 720a 1e07 0000 edff ffff
+        // b1ff ffff 2400 0000 5800 0000 0101 0000
+        // 0000 0000 0000 0000
         this.id = data.id;          // LONG	序號;	圖片的編號
         this.addr = data.addr;      // DWORD	地址;	指明圖片在數據文件中的起始位置
         this.length = data.length;  // DWORD	塊長度;	圖片數據塊的大小
